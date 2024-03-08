@@ -7,8 +7,8 @@ import { WeatherService } from 'src/app/services/weather.service';
   styleUrls: ['./weather.component.scss'],
 })
 export class WeatherComponent {
-  // public weatherData$ =
-  //   this.weatherApiService.getWeatherDetailsForMyCity('Bucharest');
+  public weatherData$ =
+    this.weatherApiService.getWeatherDetailsForMyCity('Bucharest');
   constructor(private weatherApiService: WeatherService) {}
 
   ngOnInit() {}
