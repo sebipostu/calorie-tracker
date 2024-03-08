@@ -1,0 +1,95 @@
+:host{
+    background-color: #EEF1FF;
+}
+ion-toolbar{
+    --background: #EEF1FF;
+    ion-title{
+        font-weight: bold;
+        font-size: 28px;
+    }
+    ion-searchbar{
+        width: max-content;
+        --border-radius: 10px;
+    }
+    ion-buttons{
+        ion-button{
+            ion-icon{
+                font-size: 28px;
+            }
+        }
+    }
+}
+.upper-cards,.lower-cards{
+    width: 100%;
+    height: calc(50% - 56px);
+    display: flex;
+    
+}
+
+.upper-cards{
+    margin-bottom: 5px;
+    ion-card{
+        width: 33%;
+        height: 100%;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        box-shadow: 0px 0px 10px -3px rgba(3,3,3,1);
+        ion-icon{
+            width: 100%;
+            height: 60%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            div.icon-inner{
+               svg{
+                width: 60%;
+                height: 60%;
+               }
+            }
+            &.footsteps{
+                background-color: #F1FAED;
+            color:#77D04D;
+            }
+            &.flame{
+                background-color: #FFF4E9;
+            color:#FE8D25;
+            }
+            &.pin{
+                background-color: #FBE9FF;
+            color:#D019FE;
+            }
+        }
+        .goal-tracker-data{
+            width: 100%;
+            height: 40%;
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            padding-left:10px;
+            justify-content: center;
+            h2,h5{
+                padding:5px;
+                margin:0;
+            }
+            h2{
+                font-weight: bold;
+
+            }
+        }
+    }
+}
+
+.lower-cards{
+    margin-top: 5px;
+    ion-card{
+        width: 100%;
+        height: 100%;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        box-shadow: 0px 0px 10px -3px rgba(3,3,3,1);
+    }
+}

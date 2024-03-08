@@ -1,0 +1,22 @@
+<ion-toolbar>
+  <ion-title slot="start">Welcome Back</ion-title>
+  <ion-searchbar slot="end" placeholder="Search here..."></ion-searchbar>
+  <ion-buttons slot="end">
+    <ion-button>
+      <ion-icon name="notifications-circle"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+</ion-toolbar>
+<div class="upper-cards">
+  <ion-card *ngFor="let data of goalTrackerData">
+    <ion-icon name="{{ data.icon }}" class="{{ data.icon }}"></ion-icon>
+    <div class="goal-tracker-data">
+      <h2>{{ data.value }}</h2>
+      <h5>{{ data.title }}</h5>
+    </div>
+  </ion-card>
+</div>
+<div class="lower-cards">
+  <app-logged-food></app-logged-food>
+  <app-weather></app-weather>
+</div>

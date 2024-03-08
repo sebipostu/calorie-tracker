@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-avatar>
+    <ion-img
+      alt="Cover photo"
+      src="../../../../../assets/16799551917085.jpg"
+    ></ion-img>
+  </ion-avatar>
+  <ion-title>
+    <h3>Sebastian Postu</h3>
+    <h5><ion-icon name="location"></ion-icon> Bucharest, Romania</h5>
+  </ion-title>
+</ion-header>
+<div class="profile-cards">
+  <ion-card>
+    <ion-chip>Weight: 75kg</ion-chip>
+    <ion-chip>Height: 173cm</ion-chip>
+    <ion-chip>Age: 23 years old</ion-chip>
+  </ion-card>
+  <h5>Your Goals</h5>
+  <ion-card *ngFor="let goal of goals">
+    <ion-icon name="{{ goal.iconSrc }}"></ion-icon>
+    <div class="text-wrapper">
+      <h5>{{ goal.name }}</h5>
+      <span>{{ goal.goalStatus }}</span>
+    </div>
+  </ion-card>
+</div>

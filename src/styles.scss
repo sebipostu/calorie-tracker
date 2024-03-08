@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+app-root{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    background-color: var(--main);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    ion-page{
+        position: relative;
+    }
+    ion-app{
+        display: flex;
+        background-color: var(--main)
+    }
+}
+.log-food-modal{
+    &::part(content){
+        --border-radius	: 12px;
+    }
+}
+.toast{
+    text-align: center;
+}

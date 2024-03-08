@@ -1,0 +1,19 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-title
+      >Logged food
+
+      <ion-icon name="add-circle" (click)="logFood()"></ion-icon>
+    </ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-item *ngFor="let food of loggedFood">
+      <ion-icon name="{{ food.imageSrc }}"></ion-icon>
+      <div class="food-details">
+        <h2>{{ food.foodName }}</h2>
+        <h4>{{ food.totalCalories }}</h4>
+      </div>
+      <ion-chip slot="end">{{ food.timeOfLogging }}</ion-chip>
+    </ion-item>
+  </ion-card-content>
+</ion-card>

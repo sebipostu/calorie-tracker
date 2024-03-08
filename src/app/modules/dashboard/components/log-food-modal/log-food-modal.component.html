@@ -1,0 +1,48 @@
+<form [formGroup]="foodForm">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title slot="start">Log your food</ion-title>
+      <ion-buttons slot="end">
+        <ion-button (click)="cancel()" color="secondary">
+          <ion-icon size="large" name="close-circle"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <ion-item>
+      <ion-label>Food name:</ion-label>
+      <ion-input formControlName="name" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Total Calories:</ion-label>
+      <ion-input formControlName="calories" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Protein: </ion-label>
+      <ion-input formControlName="protein" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Fats: </ion-label>
+      <ion-input formControlName="fats" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Carbs: </ion-label>
+      <ion-input formControlName="carbs" type="text"></ion-input>
+    </ion-item>
+  </ion-content>
+  <ion-footer>
+    <ion-buttons>
+      <ion-button color="medium" (click)="cancel()">Cancel</ion-button>
+    </ion-buttons>
+    <ion-buttons>
+      <ion-button
+        color="medium"
+        [disabled]="foodForm.invalid"
+        (click)="save()"
+        [strong]="true"
+        >Save</ion-button
+      >
+    </ion-buttons>
+  </ion-footer>
+</form>
