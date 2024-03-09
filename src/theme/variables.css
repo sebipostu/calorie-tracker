@@ -6,7 +6,16 @@
 /* https://ionicframework.com/docs/theming/color-generator */
 
 /** Ionic CSS Variables **/
+
+@font-face {
+  font-family: 'Merriweather';
+  src: url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap'); 
+  }
+  
+
 :root {
+  /** font-family **/
+  --ion-font-family: 'Merriweather';
   /** primary **/
   --ion-color-primary: #3880ff;
   --ion-color-primary-rgb: 56, 128, 255;

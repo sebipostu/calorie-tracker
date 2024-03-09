@@ -1,6 +1,7 @@
 :host{
-    height: calc(100% - 84px);
+    height: 100%;
     width: 100%;
+    background-color: white;
 }
 
 ion-header{
@@ -23,13 +24,22 @@ ion-header{
 }
 .profile-cards{
     display: flex;
-    align-items: flex-start;
-    justify-content: center;
+    align-items: center;
     flex-direction: column;
+    height: 100%;
     margin-left: 10px;
     ion-card:first-child{
         box-shadow: none;
         
+    }
+    .goals{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        ion-button{
+            padding:5px;
+        }
     }
     h3,h5{
         font-weight: bold;
@@ -44,6 +54,9 @@ ion-header{
         display: flex;
         align-items: center;
         color:black;
+        ion-chip{
+            font-weight: 700;
+        }
         h3,h5{
             font-weight: normal;
         }

@@ -1,29 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
+import { IonicModule } from '@ionic/angular';
+import { DataService } from 'src/app/services/data.service';
+import { LoggedFoodComponent } from '../logged-food/logged-food.component';
 
 @Component({
   selector: 'app-goals-tracker',
   templateUrl: './goals-tracker.component.html',
   styleUrls: ['./goals-tracker.component.scss'],
+  standalone: true,
+  imports: [CommonModule, IonicModule, LoggedFoodComponent],
 })
-export class GoalsTrackerComponent implements OnInit {
-  public goalTrackerData = [
-    {
-      icon: 'footsteps',
-      title: 'Total Steps',
-      value: '4961',
-    },
-    {
-      icon: 'flame',
-      title: 'Total Calories Burned',
-      value: '160 kcal',
-    },
-    {
-      icon: 'pin',
-      title: 'Total Distance',
-      value: '3.4km',
-    },
-  ];
-  constructor() {}
-
-  ngOnInit() {}
+export class GoalsTrackerComponent {
+  public goalTrackerData = this.dataService.goalTrackerData;
+  constructor(private dataService: DataService) {}
 }

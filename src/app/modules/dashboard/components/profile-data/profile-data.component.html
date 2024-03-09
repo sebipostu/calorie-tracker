@@ -16,7 +16,10 @@
     <ion-chip>Height: 173cm</ion-chip>
     <ion-chip>Age: 23 years old</ion-chip>
   </ion-card>
-  <h5>Your Goals</h5>
+  <div class="goals">
+    <h5>Your Goals</h5>
+    <ion-button> Add Goal </ion-button>
+  </div>
   <ion-card *ngFor="let goal of goals">
     <ion-icon name="{{ goal.iconSrc }}"></ion-icon>
     <div class="text-wrapper">

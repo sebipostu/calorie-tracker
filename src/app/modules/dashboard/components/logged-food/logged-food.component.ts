@@ -1,36 +1,22 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { ModalController, ToastController } from '@ionic/angular';
+import { IonicModule, ModalController, ToastController } from '@ionic/angular';
+import { DataService } from 'src/app/services/data.service';
 import { LogFoodModalComponent } from '../log-food-modal/log-food-modal.component';
 
 @Component({
   selector: 'app-logged-food',
   templateUrl: './logged-food.component.html',
   styleUrls: ['./logged-food.component.scss'],
+  standalone: true,
+  imports: [CommonModule, IonicModule, LogFoodModalComponent],
 })
 export class LoggedFoodComponent implements OnInit {
-  public loggedFood = [
-    {
-      foodName: 'Chicken Burrito Bowl',
-      imageSrc: 'image-outline',
-      timeOfLogging: '12:47 PM',
-      totalCalories: '591 Kcal',
-    },
-    {
-      foodName: 'Beef and rice',
-      imageSrc: 'image-outline',
-      timeOfLogging: '5:00 PM',
-      totalCalories: '443 Kcal',
-    },
-    {
-      foodName: 'Protein Shake',
-      imageSrc: 'image-outline',
-      timeOfLogging: '9:25 AM',
-      totalCalories: '212 Kcal',
-    },
-  ];
+  public loggedFood = this.dataService.loggedFood;
   constructor(
     private modalController: ModalController,
-    private toastController: ToastController
+    private toastController: ToastController,
+    private dataService: DataService
   ) {}
 
   ngOnInit() {}
@@ -42,7 +28,12 @@ export class LoggedFoodComponent implements OnInit {
     });
     await modal.present();
 
-    modal.onDidDismiss().then(() => this.presentToast('bottom'));
+    modal.onDidDismiss().then((data) => {
+      if (data.data) {
+        this.dataService.addFood(data.data);
+        this.presentToast('bottom');
+      }
+    });
   }
   async presentToast(position: 'top' | 'middle' | 'bottom') {
     const toast = await this.toastController.create({

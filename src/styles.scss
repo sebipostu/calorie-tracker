@@ -1,9 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+.merriweather-regular {
+    font-family: "Merriweather", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .merriweather-bold {
+    font-family: "Merriweather", serif;
+    font-weight: 700;
+    font-style: normal;
+  }
 app-root{
     margin:0;
     padding:0;
     box-sizing: border-box;
-    background-color: var(--main);
     width: 100vw;
     height: 100vh;
     display: flex;
